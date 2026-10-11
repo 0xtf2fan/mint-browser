@@ -1,0 +1,32 @@
+{
+  "name": "mint-browser",
+  "version": "1.1.0",
+  "description": "A minimal desktop browser for the memecoin web.",
+  "author": "Mint Browser contributors",
+  "main": "src/main.cjs",
+  "license": "MIT",
+  "engines": {"node": ">=22.12.0"},
+  "homepage": "https://0xtf2fan.github.io/mint-browser/",
+  "repository": {"type": "git", "url": "https://github.com/0xtf2fan/mint-browser.git"},
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.test.cjs",
+    "test:browser": "node scripts/browser-test.cjs",
+    "build": "electron-builder --win portable --x64",
+    "build:dir": "electron-builder --win --x64 --dir"
+  },
+  "devDependencies": {
+    "electron": "44.7.0",
+    "electron-builder": "26.15.3",
+    "playwright-core": "1.64.0"
+  },
+  "overrides": {"@electron/get": "5.0.0"},
+  "build": {
+    "appId": "com.mintbrowser.app",
+    "productName": "Mint Browser",
+    "files": ["src/**/*", "package.json", "LICENSE"],
+    "directories": {"output": "dist"},
+    "win": {"target": ["portable"], "icon": "src/icon.ico", "signExecutable": false},
+    "portable": {"artifactName": "Mint-Browser-${version}-Windows.exe"}
+  }
+}
