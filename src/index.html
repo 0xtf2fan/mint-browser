@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Mint Browser</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="chrome">
+    <div class="tabstrip"><span class="brand-mark" aria-label="Mint Browser">m<span>•</span></span><div id="tabs" role="tablist" aria-label="Browser tabs"></div><button id="new-tab" title="New tab (Ctrl+T)" aria-label="New tab">+</button><span class="session-label"><i></i> SESSION ONLY</span></div>
+    <div class="toolbar">
+      <button id="back" title="Back" aria-label="Back">←</button><button id="forward" title="Forward" aria-label="Forward">→</button><button id="reload" title="Reload (Ctrl+R)" aria-label="Reload">↻</button><button id="home" title="Home" aria-label="Home">⌂</button>
+      <form id="address-form"><span id="protocol" aria-label="Connection">◇</span><input id="address" type="text" placeholder="Search or enter a URL" autocomplete="off" spellcheck="false" aria-label="Search or enter a URL"><kbd>Ctrl L</kbd></form>
+      <button id="clear" class="clear-button" title="Close tabs and clear website cookies, storage and cache">Clear session</button>
+    </div>
+    <nav class="bookmarks" aria-label="Quick links"><button data-url="https://dexscreener.com">DEX Screener</button><button data-url="https://gmgn.ai">GMGN</button><button data-url="https://pump.fun">Pump.fun</button><button data-url="https://birdeye.so">Birdeye</button><button data-url="https://jup.ag">Jupiter</button><button data-url="https://sol-incinerator.com">Sol Incinerator</button><span></span><button data-url="https://x.com">𝕏 / Timeline ↗</button></nav>
+  </header>
+  <main id="home-page">
+    <div class="home-top"><span>MINT / NEW TAB</span><span id="clock"></span></div>
+    <section class="hero"><div class="eyebrow"><i></i> THE MEMECOIN WEB, ONE TAB AWAY</div><h1>Less noise.<br><em>More signal.</em></h1><p>Your starting point for charts, launches and the timeline.</p>
+      <form id="search-form"><span>⌕</span><input id="search" placeholder="Search the web or paste a contract address" aria-label="Search web or contract address" autocomplete="off" spellcheck="false"><select id="search-mode" aria-label="Search destination"><option value="web">Web</option><option value="token">Token</option><option value="x">X</option></select><button aria-label="Search">→</button></form>
+      <div class="search-hint">Web search via DuckDuckGo <b>·</b> Token lookup via DEX Screener</div>
+    </section>
+    <section class="launchpad"><div class="section-heading"><h2>Your launchpad</h2><span>GO STRAIGHT TO THE SOURCE ↗</span></div>
+      <div class="cards">
+        <button class="card" data-url="https://dexscreener.com"><span class="card-icon mint">D</span><span class="card-arrow">↗</span><strong>DEX Screener</strong><small>Charts & pair discovery</small><span class="tag">MARKETS</span></button>
+        <button class="card" data-url="https://gmgn.ai"><span class="card-icon violet">G</span><span class="card-arrow">↗</span><strong>GMGN</strong><small>Wallets & on-chain activity</small><span class="tag">RESEARCH</span></button>
+        <button class="card" data-url="https://pump.fun"><span class="card-icon yellow">P</span><span class="card-arrow">↗</span><strong>Pump.fun</strong><small>New tokens & launches</small><span class="tag">LAUNCHES</span></button>
+        <button class="card" data-url="https://sol-incinerator.com"><span class="card-icon yellow">S</span><span class="card-arrow">↗</span><strong>Sol Incinerator</strong><small>Clean up your Solana wallet</small><span class="tag">TOOLS</span></button>
+        <button class="card" data-url="https://x.com"><span class="card-icon neutral">𝕏</span><span class="card-arrow">↗</span><strong>The timeline</strong><small>Find the conversation</small><span class="tag">SOCIAL</span></button>
+      </div>
+    </section>
+    <footer><span><i></i> No account. No added analytics.</span><span>MINT BROWSER <b>·</b> 1.1.0</span></footer>
+  </main>
+  <div id="notice" role="status" hidden></div>
+  <script src="renderer.js"></script>
+</body>
+</html>
